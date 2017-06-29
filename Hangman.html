@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="hangman.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<title></title>
+</head>
+  <div class="row">
+  <div class="col-md-12"><h2 class="text-center">Hangman Game</h2></div>
+  <div class="col-md-12"><h3 class="text-center">Javascript Hangman Game</h></div>
+<body>
+  
+  <div id="buttons"></div>
+  
+<script type="text/javascript">
+  
+	var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+	var buttons =  function () {
+    myButtons = document.getElementById('buttons');
+    letters = document.createElement('ul');
+
+	for(var i = 0;i < alphabet.length;i++) {
+		letters.id = "alphabet";
+		list = document.createElement("li");
+		list.id = "letter";
+		list.innerHTML = alphabet[i];
+		check();
+		//myButtons.appendChild(letters);
+		//letters.appendChild(list);
+	}
+}
+  
+</script>
+
+</body>
+</html>	
