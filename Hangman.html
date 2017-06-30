@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+
 <link rel="stylesheet" type="text/css" href="hangman.css">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -15,26 +12,34 @@
   <div class="col-md-12"><h3 class="text-center">Javascript Hangman Game</h></div>
 <body>
   
-  <div id="buttons"></div>
+  <div id="buttons" class="text-center"></div>
+
+  <div><h1 class="text-center">Choose a Letter</h1></div>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   
 <script type="text/javascript">
   
+$(document).ready(function() {
+
 	var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
-	var buttons =  function () {
-    myButtons = document.getElementById('buttons');
-    letters = document.createElement('ul');
 
-	for(var i = 0;i < alphabet.length;i++) {
-		letters.id = "alphabet";
-		list = document.createElement("li");
-		list.id = "letter";
-		list.innerHTML = alphabet[i];
-		check();
-		//myButtons.appendChild(letters);
-		//letters.appendChild(list);
-	}
-}
+	for (var i = 0; i < alphabet.length; i++) {
+ 
+        var letterBtn = $("<button>");   
+        letterBtn.addClass("letter-button letter");      
+        letterBtn.attr("data-letter", alphabet[i])
+        letterBtn.text(alphabet[i]);
+        $("#buttons").append(letterBtn);
+
+      }
+  });
+
+$(".letter-button").on("click", function() {
+	document.write(".letter-button");
+
+});
   
 </script>
 
